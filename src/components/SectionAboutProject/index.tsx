@@ -13,8 +13,6 @@ const SectionAboutProject = () => (
             src="/img/project.png"
             alt="Tela do ecommerce com uma imagem do CMS por trás"
             layout="fill"
-            // width={586}
-            // height={447}
             objectFit="contain"
           />
         </S.Image>
