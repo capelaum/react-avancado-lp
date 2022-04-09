@@ -1,4 +1,4 @@
-export default {
+const theme = {
   grid: {
     container: '130rem',
     gutter: '3.2rem'
@@ -41,3 +41,5 @@ export default {
     xxlarge: '12.8rem'
   }
 }
+
+export default theme

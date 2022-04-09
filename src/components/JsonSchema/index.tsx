@@ -1,9 +1,10 @@
-import React from 'react'
 import { CourseJsonLd, ProductJsonLd } from 'next-seo'
+import React from 'react'
 
 const JsonSchema = () => (
   <>
     <CourseJsonLd
+      provider={'Udemy'}
       courseName="React Avançado"
       providerName="Willian Justen Cursos"
       providerUrl="https://reactavancado.com.br/"
