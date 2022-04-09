@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Card = styled.article`
-  ${({ theme }) => css`
+  ${({ theme }) => `
     border-radius: ${theme.border.radius};
     background-color: ${theme.colors.white};
     padding: ${theme.spacings.medium};
@@ -9,20 +9,22 @@ export const Card = styled.article`
   `}
 `
 
-export const Image = styled.picture`
-  ${({ theme }) => css`
+export const Image = styled.div`
+  position: relative;
+  width: 12.5rem;
+  height: 12.5rem;
+  margin: auto;
+
+  ${({ theme }) => `
+    margin-bottom: ${theme.spacings.xsmall};
     img {
-      width: 12.5rem;
-      height: 12.5rem;
       border-radius: 100%;
-      margin: auto;
-      margin-bottom: ${theme.spacings.xsmall};
     }
   `}
 `
 
 export const Name = styled.div`
-  ${({ theme }) => css`
+  ${({ theme }) => `
     font-size: ${theme.font.sizes.medium};
     font-weight: ${theme.font.bold};
     color: ${theme.colors.black};
@@ -30,7 +32,7 @@ export const Name = styled.div`
 `
 
 export const Role = styled.div`
-  ${({ theme }) => css`
+  ${({ theme }) => `
     font-size: ${theme.font.sizes.small};
     color: ${theme.colors.primary};
     margin-bottom: ${theme.spacings.xxsmall};
@@ -38,7 +40,7 @@ export const Role = styled.div`
 `
 
 export const SocialLinks = styled.ul`
-  ${({ theme }) => css`
+  ${({ theme }) => `
     display: flex;
     justify-content: center;
     margin-bottom: ${theme.spacings.xsmall};
@@ -46,7 +48,7 @@ export const SocialLinks = styled.ul`
 `
 
 export const Link = styled.li`
-  ${({ theme }) => css`
+  ${({ theme }) => `
     display: block;
     > a {
       padding: ${theme.spacings.xxsmall};
@@ -61,7 +63,7 @@ export const Link = styled.li`
 `
 
 export const Description = styled.div`
-  ${({ theme }) => css`
+  ${({ theme }) => `
     font-size: ${theme.font.sizes.xxsmall};
     color: ${theme.colors.texts};
   `}

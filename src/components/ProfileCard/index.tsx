@@ -1,17 +1,17 @@
+import Image from 'next/image'
 import React from 'react'
-import { IconType } from 'react-icons'
 import { FaDribbble, FaTwitter } from 'react-icons/fa'
 import { GrGithub } from 'react-icons/gr'
 import * as S from './styles'
 
-const icons = {
+const icons: IconsType = {
   twitter: <FaTwitter />,
   github: <GrGithub />,
   dribbble: <FaDribbble />
 }
 
-type IconObjType = {
-  [key: string]: IconType
+type IconsType = {
+  [key: string]: any
 }
 
 type socialLinks = {
@@ -36,12 +36,7 @@ const ProfileCard: React.FC<Props> = ({
 }) => (
   <S.Card key={name}>
     <S.Image>
-      {/* <source
-        srcSet={require(`@images/authors/${image}?webp`)}
-        type="image/webp"
-      />
-      <source srcSet={require(`@images/authors/${image}`)} type="image/png" /> */}
-      <img src={`/img/authors/${image}`} loading="lazy" alt={name} />
+      <Image src={`/img/authors/${image}`} alt={name} layout="fill" />
     </S.Image>
     <S.Name>{name}</S.Name>
     <S.Role>{role}</S.Role>
