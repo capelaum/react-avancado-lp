@@ -1,19 +1,22 @@
-import React from 'react'
-
-import Logo from 'components/Logo'
 import Button from 'components/Button'
-import * as S from './styles'
-
-import { gaEvent } from 'utils/ga'
 import Container from 'components/Container'
+import Logo from 'components/Logo'
+import React from 'react'
+import { LogoProps } from 'types/api'
+import { gaEvent } from 'utils/ga'
+import * as S from './styles'
 
 const onClick = () =>
   gaEvent({ action: 'click', category: 'cta', label: 'hero button' })
 
-const SectionHero = () => (
+interface SectionHeroProps {
+  logo: LogoProps
+}
+
+const SectionHero = ({ logo }: SectionHeroProps) => (
   <S.Wrapper>
     <Container>
-      <Logo />
+      <Logo {...logo} />
 
       <S.Content>
         <S.TextBlock>
