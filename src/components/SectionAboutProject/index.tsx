@@ -1,5 +1,6 @@
 import Container from 'components/Container'
 import Heading from 'components/Heading'
+import Image from 'next/image'
 import React from 'react'
 import * as S from './styles'
 
@@ -8,10 +9,13 @@ const SectionAboutProject = () => (
     <Container>
       <S.Container>
         <S.Image>
-          <img
+          <Image
             src="/img/project.png"
-            loading="lazy"
             alt="Tela do ecommerce com uma imagem do CMS por trás"
+            layout="fill"
+            // width={586}
+            // height={447}
+            objectFit="contain"
           />
         </S.Image>
         <div>
