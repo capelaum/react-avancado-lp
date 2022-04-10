@@ -8,7 +8,8 @@ const nextConfig = {
   },
   images: {
     domains: ['localhost']
-  }
+  },
+  styledComponents: true
 }
 
 module.exports = nextConfig
