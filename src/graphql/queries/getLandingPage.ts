@@ -88,6 +88,26 @@ const GET_LANDING_PAGE = gql`
     }
   }
 
+  fragment sectionAuthors on LandingPage {
+    sectionAuthors {
+      title
+      authors {
+        id
+        name
+        role
+        description
+        photo {
+          alternativeText
+          url
+        }
+        socialIcons {
+          title
+          url
+        }
+      }
+    }
+  }
+
   query GET_LANDING_PAGE {
     landingPage {
       ...logo
@@ -98,6 +118,7 @@ const GET_LANDING_PAGE = gql`
       ...sectionModules
       ...sectionAgenda
       ...pricingBox
+      ...sectionAuthors
     }
   }
 `

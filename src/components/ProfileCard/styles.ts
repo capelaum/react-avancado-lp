@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Card = styled.article`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     border-radius: ${theme.border.radius};
     background-color: ${theme.colors.white};
     padding: ${theme.spacings.medium};
@@ -9,22 +9,18 @@ export const Card = styled.article`
   `}
 `
 
-export const Image = styled.div`
-  position: relative;
-  width: 12.5rem;
-  height: 12.5rem;
-  margin: auto;
-
-  ${({ theme }) => `
+export const Image = styled.img`
+  ${({ theme }) => css`
+    width: 12.5rem;
+    height: 12.5rem;
+    border-radius: 100%;
+    margin: auto;
     margin-bottom: ${theme.spacings.xsmall};
-    img {
-      border-radius: 100%;
-    }
   `}
 `
 
 export const Name = styled.div`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     font-size: ${theme.font.sizes.medium};
     font-weight: ${theme.font.bold};
     color: ${theme.colors.black};
@@ -32,7 +28,7 @@ export const Name = styled.div`
 `
 
 export const Role = styled.div`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
     color: ${theme.colors.primary};
     margin-bottom: ${theme.spacings.xxsmall};
@@ -40,7 +36,7 @@ export const Role = styled.div`
 `
 
 export const SocialLinks = styled.ul`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     display: flex;
     justify-content: center;
     margin-bottom: ${theme.spacings.xsmall};
@@ -48,11 +44,21 @@ export const SocialLinks = styled.ul`
 `
 
 export const Link = styled.li`
-  ${({ theme }) => `
-    display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${({ theme }) => css`
     > a {
-      padding: ${theme.spacings.xxsmall};
       color: ${theme.colors.secondary};
+      /* border: 1px solid red; */
+      margin-left: 1rem;
+      transition: alll 0.3s ease-in-out;
+    }
+
+    > a:hover {
+      color: ${theme.colors.primaryHover};
+      transform: scale(1.1);
     }
 
     svg {
@@ -63,7 +69,7 @@ export const Link = styled.li`
 `
 
 export const Description = styled.div`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     font-size: ${theme.font.sizes.xxsmall};
     color: ${theme.colors.texts};
   `}
