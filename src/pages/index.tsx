@@ -16,9 +16,9 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 import { LandingPageProps } from 'types/api'
 
-const Index = ({ logo }: LandingPageProps) => (
+const Index = ({ logo, header }: LandingPageProps) => (
   <>
-    <SectionHero logo={logo} />
+    <SectionHero logo={logo} header={header} />
     <SectionAboutProject />
     <SectionTech />
     <SectionConcepts />

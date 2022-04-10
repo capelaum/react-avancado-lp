@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 export const Wrapper = styled.header`
@@ -24,7 +24,7 @@ export const Content = styled.div`
 `
 
 export const TextBlock = styled.div`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     max-width: 60rem;
@@ -38,7 +38,7 @@ export const TextBlock = styled.div`
 `
 
 export const Title = styled.h1`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     font-size: min(${theme.font.sizes.xxlarge}, 5vw);
     font-weight: ${theme.font.bold};
 
@@ -49,7 +49,7 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.h2`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     font-size: 2.2rem;
     line-height: 3rem;
     font-weight: 400;
@@ -62,7 +62,7 @@ export const Description = styled.h2`
 `
 
 export const ButtonWrapper = styled.div`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     display: flex;
     padding-top: ${theme.spacings.medium};
     margin: 0 auto;
@@ -75,7 +75,7 @@ export const ButtonWrapper = styled.div`
 `
 
 export const Image = styled.img`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     margin: ${theme.spacings.large} auto;
     width: min(34rem, 100%);
 
