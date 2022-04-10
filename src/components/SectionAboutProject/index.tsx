@@ -2,43 +2,29 @@ import Container from 'components/Container'
 import Heading from 'components/Heading'
 import Image from 'next/image'
 import React from 'react'
+import { SectionAboutProjectProps } from 'types/api'
+import { getImageUrl } from 'utils/getImageUrl'
 import * as S from './styles'
 
-const SectionAboutProject = () => (
+const SectionAboutProject = ({
+  title,
+  description,
+  media
+}: SectionAboutProjectProps) => (
   <S.Wrapper>
     <Container>
       <S.Container>
         <S.Image>
           <Image
-            src="/img/project.png"
-            alt="Tela do ecommerce com uma imagem do CMS por trás"
+            src={getImageUrl(media.url)}
+            alt={media.alternativeText}
             layout="fill"
             objectFit="contain"
           />
         </S.Image>
         <div>
-          <Heading>O que iremos construir</Heading>
-          <S.Text>
-            <p>
-              Iremos criar um e-commerce de jogos, incluindo toda a parte de
-              pagamentos e área do cliente. Os clientes poderão fazer buscas,
-              filtrar, adicionar ao carrinho e comprar seus jogos favoritos.
-            </p>
-
-            <p>
-              Teremos também um <strong>CMS completamente customizado</strong>{' '}
-              para que os administradores possam adicionar produtos, categorias,
-              plataformas, criar promoções, editar partes do site, além de
-              emails automatizados para às vendas de cada produto.
-            </p>
-
-            <p>
-              Para criar tudo isso, iremos utilizar ferramentas muito famosas no
-              mercado de trabalho, como ReactJS, Next, Apollo e outras coisas
-              mais. Sempre prezando pela qualidade do código, ou seja, teremos{' '}
-              <strong>testes em tudo!</strong>
-            </p>
-          </S.Text>
+          <Heading>{title}</Heading>
+          <S.Text dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       </S.Container>
     </Container>

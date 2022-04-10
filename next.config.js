@@ -5,6 +5,9 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     styledComponents: true
+  },
+  images: {
+    domains: ['localhost']
   }
 }
 
