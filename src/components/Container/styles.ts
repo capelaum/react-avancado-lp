@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 export const Container = styled.div`
-  ${({ theme }) => `
+  ${({ theme }) => css`
     max-width: ${theme.grid.container};
     padding: ${theme.spacings?.large} calc(${theme.grid.gutter} / 2);
     margin: 0 auto;

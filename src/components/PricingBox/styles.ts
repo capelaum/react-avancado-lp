@@ -1,22 +1,37 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-export const Box = styled.section`
+export const Content = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
   ${({ theme }) => css`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0;
-    background: ${theme.colors.white};
-    padding: ${theme.spacings.medium} calc(${theme.spacings.medium} / 2);
-    margin: 0 auto ${theme.spacings.large};
+    max-width: ${theme.grid.container};
+    padding: 0 calc(${theme.grid.gutter} / 2);
+    margin: 0 auto;
 
     ${media.greaterThan('medium')`
-      max-width: 72rem;
-      padding: ${theme.spacings.large} ${theme.spacings.xxlarge};
-      margin: 0 auto ${theme.spacings.large};
-      border-radius: ${theme.border.radius};
+      padding: 0 calc(${theme.grid.gutter} / 2);
+      flex-direction: row;
+      gap: 2rem;
     `}
+  `}
+`
+
+export const Box = styled.div`
+  ${({ theme }) => css`
+    position: relative;
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex: 50%;
+
+    padding: ${theme.spacings.medium};
+
+    border-radius: ${theme.border.radius};
+    background: ${theme.colors.white};
   `}
 `
 
@@ -59,36 +74,40 @@ export const DiscountPrice = styled.p`
   `}
 `
 
-export const BenefitsList = styled.ul`
-  ${({ theme }) => css`
-    list-style: none;
-    margin-bottom: ${theme.spacings.large};
-  `}
+export const BenefitsList = styled.div`
+  ul {
+    ${({ theme }) => css`
+      list-style: none;
+      margin-bottom: ${theme.spacings.large};
+    `}
+  }
+
+  li {
+    ${({ theme }) => css`
+      color: ${theme.colors.black};
+      font-size: ${theme.font.sizes.small};
+      position: relative;
+      padding-left: ${theme.spacings.small};
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        width: 0.9rem;
+        height: 0.9rem;
+        top: 0.9rem;
+        left: 0rem;
+        border-radius: 100%;
+        background: ${theme.colors.secondary};
+      }
+
+      &:not(:last-child) {
+        margin-bottom: ${theme.spacings.xsmall};
+      }
+    `}
+  }
 `
 
-export const BenefitsItem = styled.li`
-  ${({ theme }) => css`
-    color: ${theme.colors.black};
-    font-size: ${theme.font.sizes.small};
-    position: relative;
-    padding-left: ${theme.spacings.small};
-
-    &::after {
-      content: ' ';
-      position: absolute;
-      width: 0.9rem;
-      height: 0.9rem;
-      top: 0.9rem;
-      left: 0rem;
-      border-radius: 100%;
-      background: ${theme.colors.secondary};
-    }
-
-    &:not(:last-child) {
-      margin-bottom: ${theme.spacings.xsmall};
-    }
-  `}
-`
+export const BenefitsItem = styled.li``
 
 export const ButtonFullPrice = styled.span`
   ${({ theme }) => css`

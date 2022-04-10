@@ -34,7 +34,7 @@ export const IconsContainer = styled.div`
 
 export const Icon = styled.div``
 
-export const Icons = styled.img`
+export const IconImage = styled.img`
   width: 7rem;
   height: 7rem;
   transition: all 0.4s;

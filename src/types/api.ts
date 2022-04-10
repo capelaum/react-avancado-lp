@@ -38,13 +38,11 @@ export type SectionTechProps = {
   techIcons: TechIcon[]
 }
 
-export type Concept = {
-  title: string
-}
-
 export type SectionConceptsProps = {
   title: string
-  concepts: Concept[]
+  concepts: Array<{
+    title: string
+  }>
 }
 
 export type Module = {
@@ -63,6 +61,18 @@ export type SectionAgendaProps = {
   description: string
 }
 
+export type PricingBoxProps = {
+  id: string
+  totalPrice: number
+  numberInstallments: number
+  priceInstallment: number
+  benefits: string
+  button: {
+    label: string
+    url: string
+  }
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   header: HeaderProps
@@ -71,4 +81,5 @@ export type LandingPageProps = {
   sectionConcepts: SectionConceptsProps
   sectionModules: SectionModulesProps
   sectionAgenda: SectionAgendaProps
+  pricingBox: PricingBoxProps[]
 }

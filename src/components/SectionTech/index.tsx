@@ -12,7 +12,7 @@ const SectionTech = ({ title, techIcons }: SectionTechProps) => (
       <S.IconsContainer>
         {techIcons.map(({ title, icon }) => (
           <S.Icon key={title}>
-            <S.Icons
+            <S.IconImage
               src={getImageUrl(icon.url)}
               alt={icon.alternativeText}
               loading="lazy"
