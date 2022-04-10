@@ -129,6 +129,10 @@ const GET_LANDING_PAGE = gql`
         question
         answer
       }
+      extraQuestions {
+        question
+        answer
+      }
     }
   }
 

@@ -106,6 +106,7 @@ export type Question = {
 export type SectionFaqProps = {
   title: string
   questions: Question[]
+  extraQuestions?: Question[]
 }
 
 export type LandingPageProps = {
