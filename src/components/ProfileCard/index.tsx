@@ -4,7 +4,8 @@ import {
   FaDribbble,
   FaInstagram,
   FaLinkedin,
-  FaTwitter
+  FaTwitter,
+  FaYoutube
 } from 'react-icons/fa'
 import { GrGithub } from 'react-icons/gr'
 import { RiComputerLine } from 'react-icons/ri'
@@ -19,7 +20,8 @@ const icons: IconsType = {
   instagram: <FaInstagram />,
   website: <RiComputerLine />,
   behance: <FaBehanceSquare />,
-  linkedin: <FaLinkedin />
+  linkedin: <FaLinkedin />,
+  youtube: <FaYoutube />
 }
 
 type IconsType = {
@@ -34,7 +36,11 @@ const ProfileCard: React.FC<Author> = ({
   description
 }) => (
   <S.Card>
-    <S.Image src={getImageUrl(photo.url)} alt={photo.alternativeText} />
+    <S.Image
+      src={getImageUrl(photo.url)}
+      alt={photo.alternativeText}
+      loading="lazy"
+    />
     <S.Name>{name}</S.Name>
     <S.Role>{role}</S.Role>
     <S.SocialLinks>

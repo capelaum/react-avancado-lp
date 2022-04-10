@@ -39,7 +39,7 @@ export const SocialLinks = styled.ul`
   ${({ theme }) => css`
     display: flex;
     justify-content: center;
-    margin-bottom: ${theme.spacings.xsmall};
+    margin: ${theme.spacings.xsmall} 0;
   `}
 `
 

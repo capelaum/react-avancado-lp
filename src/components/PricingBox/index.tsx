@@ -38,7 +38,7 @@ const PricingBox = ({ pricingBoxes }: PricingBoxComponentProps) => (
             <div>
               <S.ButtonFullPrice>R${totalPrice}</S.ButtonFullPrice>
               <S.ButtonDiscountPrice>
-                R${numberInstallments * priceInstallment + 3}
+                R${numberInstallments * priceInstallment}
               </S.ButtonDiscountPrice>
             </div>
           </Button>
