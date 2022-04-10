@@ -16,11 +16,16 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 import { LandingPageProps } from 'types/api'
 
-const Index = ({ logo, header, sectionAboutProject }: LandingPageProps) => (
+const Index = ({
+  logo,
+  header,
+  sectionAboutProject,
+  sectionTech
+}: LandingPageProps) => (
   <>
     <SectionHero logo={logo} header={header} />
     <SectionAboutProject {...sectionAboutProject} />
-    <SectionTech />
+    <SectionTech {...sectionTech} />
     <SectionConcepts />
     <SectionModules />
     <SectionAgenda />
@@ -35,7 +40,7 @@ const Index = ({ logo, header, sectionAboutProject }: LandingPageProps) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const { landingPage } = await client.request(GET_LANDING_PAGE)
-  console.log('🚀 ~ landingPage', landingPage)
+  console.log('🚀 ~ landingPage', JSON.stringify(landingPage, null, 2))
 
   return {
     props: {
