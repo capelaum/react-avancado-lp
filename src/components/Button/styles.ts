@@ -1,19 +1,21 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+import { Theme } from 'types/theme'
 
 type Props = {
-  wide: boolean
-  withPrice: boolean
+  wide: boolean | undefined
+  withPrice: boolean | undefined
 }
 
 const buttonModifiers = {
-  withPrice: (theme: DefaultTheme) => css`
+  withPrice: (theme: Theme) => css`
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.xsmall};
   `,
-  wide: (theme: DefaultTheme) => css`
+
+  wide: (theme: Theme) => css`
     padding: 1.3rem ${theme.spacings.medium};
 
     ${media.greaterThan('medium')`
