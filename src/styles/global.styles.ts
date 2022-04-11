@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components'
+import { Theme } from 'types/theme'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -19,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ${({ theme }) => css`
+  ${({ theme }: { theme: Theme }) => css`
     html {
       font-family: ${theme.font.family};
       font-size: 62.5%;
