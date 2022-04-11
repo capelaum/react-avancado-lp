@@ -7,10 +7,30 @@ import Document, {
   Main,
   NextScript
 } from 'next/document'
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class NextDocument extends Document {
+  render(): ReactElement {
+    return (
+      <Html lang="pt-br">
+        <Head>
+          <link
+            rel="preload"
+            href="/fonts/poppins-v9-latin-regular.woff2"
+            as="font"
+            crossOrigin=""
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+          <Analytics />
+        </body>
+      </Html>
+    )
+  }
+
   static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
@@ -31,7 +51,7 @@ export default class NextDocument extends Document {
           {initialProps.styles}
           {sheet.getStyleElement()}
         </>
-      )
+      ) as any
 
       return {
         ...initialProps
@@ -39,25 +59,5 @@ export default class NextDocument extends Document {
     } finally {
       sheet.seal()
     }
-  }
-
-  render() {
-    return (
-      <Html lang="pt-br">
-        <Head>
-          <link
-            rel="preload"
-            href="/fonts/poppins-v9-latin-regular.woff2"
-            as="font"
-            crossOrigin=""
-          />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-          <Analytics />
-        </body>
-      </Html>
-    )
   }
 }
