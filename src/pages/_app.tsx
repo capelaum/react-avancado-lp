@@ -17,9 +17,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       <NextSeo
         title="React Avançado - Crie aplicações reais com NextJS, GraphQL e mais."
         description="Aprenda a criar um Ecommerce completo, indo do Backend ao Frontend utilizando tecnologias como ReactJS, NextJS, Strapi, GraphQL, Apollo e muito mais!"
-        canonical="https://reactavancado.com.br/"
+        canonical="https://reactavancado.com.br"
         openGraph={{
-          url: 'https://reactavancado.com.br/',
+          url: 'https://reactavancado.com.br',
           title:
             'React Avançado - Crie aplicações reais com NextJS, GraphQL e mais.',
           description:
@@ -27,11 +27,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           images: [{ url: 'https://reactavancado.com.br/img/cover.png' }],
           site_name: 'React Avançado',
           locale: 'pt_BR'
-        }}
-        twitter={{
-          handle: '@Willian_justen',
-          site: '@site',
-          cardType: 'summary_large_image'
         }}
       />
       <GlobalStyle />
