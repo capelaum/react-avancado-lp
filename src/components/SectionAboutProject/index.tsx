@@ -1,6 +1,5 @@
 import Container from 'components/Container'
 import Heading from 'components/Heading'
-import Image from 'next/image'
 import React from 'react'
 import { SectionAboutProjectProps } from 'types/api'
 import { getImageUrl } from 'utils/getImageUrl'
@@ -14,14 +13,8 @@ const SectionAboutProject = ({
   <S.Wrapper>
     <Container>
       <S.Container>
-        <S.Image>
-          <Image
-            src={getImageUrl(media.url)}
-            alt={media.alternativeText}
-            layout="fill"
-            objectFit="contain"
-          />
-        </S.Image>
+        <S.Image src={getImageUrl(media.url)} alt={media.alternativeText} />
+
         <div>
           <Heading>{title}</Heading>
           <S.Text dangerouslySetInnerHTML={{ __html: description }} />
