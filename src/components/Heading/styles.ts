@@ -1,22 +1,22 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
-
+import { Theme } from 'types/theme'
 import { Props } from '.'
 
 const wrapperModifiers = {
-  defaultColor: (theme: DefaultTheme) => css`
+  defaultColor: (theme: Theme) => css`
     color: ${theme.colors.black};
   `,
 
-  reverseColor: (theme: DefaultTheme) => css`
+  reverseColor: (theme: Theme) => css`
     color: ${theme.colors.white};
   `,
 
-  lineLeft: (theme: DefaultTheme) => css`
+  lineLeft: (theme: Theme) => css`
     border-left: 7px solid ${theme.colors.secondary};
   `,
 
-  lineBottom: (theme: DefaultTheme) => css`
+  lineBottom: (theme: Theme) => css`
     padding-left: 0;
     position: relative;
     margin-bottom: ${theme.spacings.medium};
