@@ -4,34 +4,46 @@ import media from 'styled-media-query'
 export const Content = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+
   gap: 4rem;
 
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    padding: 0 calc(${theme.grid.gutter} / 2);
     margin: 0 auto;
+    padding: ${theme.spacings.medium} calc(${theme.spacings.medium} / 2);
 
     ${media.greaterThan('medium')`
-      padding: 0 calc(${theme.grid.gutter} / 2);
+      padding: ${theme.spacings.large} ${theme.spacings.xxlarge};
       flex-direction: row;
+      justify-content: center;
       gap: 2rem;
     `}
   `}
 `
 
 export const Box = styled.div`
+  position: relative;
+
+  display: flex;
+
+  height: 100%;
+  max-width: 100%;
+
+  flex-direction: column;
+  flex: 50%;
+
   ${({ theme }) => css`
-    position: relative;
-
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    flex: 50%;
-
-    padding: ${theme.spacings.medium};
+    padding: ${theme.spacings.xsmall};
 
     border-radius: ${theme.border.radius};
     background: ${theme.colors.white};
+
+    ${media.greaterThan('medium')`
+      padding: ${theme.spacings.medium};
+      max-width: 64rem;
+    `}
   `}
 `
 
@@ -42,10 +54,9 @@ export const Prices = styled.div`
     align-items: center;
     flex-direction: column;
     margin-bottom: ${theme.spacings.medium};
-
     ${media.greaterThan('medium')`
-      margin-bottom: ${theme.spacings.large};
-    `}
+    margin-bottom: ${theme.spacings.large};
+  `}
   `}
 `
 
@@ -54,7 +65,6 @@ export const FullPrice = styled.p`
     color: ${theme.colors.gray};
     font-size: ${theme.font.sizes.large};
     font-weight: 400;
-
     span {
       text-decoration: line-through;
     }
@@ -66,7 +76,6 @@ export const DiscountPrice = styled.p`
     color: ${theme.colors.primary};
     font-size: ${theme.font.sizes.xxlarge};
     font-weight: ${theme.font.bold};
-
     span {
       color: ${theme.colors.texts};
       font-size: ${theme.font.sizes.medium};
@@ -106,8 +115,6 @@ export const BenefitsList = styled.div`
     `}
   }
 `
-
-export const BenefitsItem = styled.li``
 
 export const ButtonFullPrice = styled.span`
   ${({ theme }) => css`
