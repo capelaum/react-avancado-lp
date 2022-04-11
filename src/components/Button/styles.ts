@@ -39,6 +39,12 @@ export const ButtonWrapper = styled.a<Props>`
       background: ${theme.colors.primaryHover};
     }
 
+    ${media.lessThan('small')`
+      white-space: normal;
+
+
+    `}
+
     ${wide && buttonModifiers.wide(theme)};
     ${withPrice && buttonModifiers.withPrice(theme)};
   `}

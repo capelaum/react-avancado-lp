@@ -5,7 +5,9 @@ export const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  justify-content: start;
+
+  border: 1px solid red;
 
   gap: 4rem;
 
@@ -15,34 +17,30 @@ export const Content = styled.section`
     padding: ${theme.spacings.medium} calc(${theme.spacings.medium} / 2);
 
     ${media.greaterThan('medium')`
-      padding: ${theme.spacings.large} ${theme.spacings.xxlarge};
+      padding: ${theme.spacings.large} ${theme.spacings.medium};
       flex-direction: row;
       justify-content: center;
+      align-items: start;
       gap: 2rem;
     `}
   `}
 `
 
 export const Box = styled.div`
-  position: relative;
-
   display: flex;
-
-  height: 100%;
-  max-width: 100%;
-
   flex-direction: column;
-  flex: 50%;
+  flex: 1;
 
   ${({ theme }) => css`
     padding: ${theme.spacings.xsmall};
 
     border-radius: ${theme.border.radius};
     background: ${theme.colors.white};
+    width: 100%;
 
     ${media.greaterThan('medium')`
       padding: ${theme.spacings.medium};
-      max-width: 64rem;
+      max-width: 72rem;
     `}
   `}
 `
