@@ -8,8 +8,7 @@ const nextConfig = {
   },
   images: {
     domains: ['localhost', 'res.cloudinary']
-  },
-  styledComponents: true
+  }
 }
 
 module.exports = nextConfig

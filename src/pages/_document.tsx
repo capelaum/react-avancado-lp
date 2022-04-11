@@ -1,16 +1,19 @@
-import React from 'react'
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext
-} from 'next/document'
 import Analytics from 'components/Analytics'
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript
+} from 'next/document'
+import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class NextDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
@@ -22,14 +25,16 @@ export default class NextDocument extends Document {
         })
 
       const initialProps = await Document.getInitialProps(ctx)
+
+      initialProps.styles = (
+        <>
+          {initialProps.styles}
+          {sheet.getStyleElement()}
+        </>
+      )
+
       return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        )
+        ...initialProps
       }
     } finally {
       sheet.seal()
