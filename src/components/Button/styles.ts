@@ -41,8 +41,6 @@ export const ButtonWrapper = styled.a<Props>`
 
     ${media.lessThan('small')`
       white-space: normal;
-
-
     `}
 
     ${wide && buttonModifiers.wide(theme)};

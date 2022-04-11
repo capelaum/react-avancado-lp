@@ -7,8 +7,6 @@ export const Content = styled.section`
   align-items: center;
   justify-content: start;
 
-  border: 1px solid red;
-
   gap: 4rem;
 
   ${({ theme }) => css`
